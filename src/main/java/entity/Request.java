@@ -1,5 +1,7 @@
 package entity;
 
+import main.Color;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -70,12 +72,11 @@ public class Request {
 
     @Override
     public String toString() {
-        return "Request{" +
-                "\n     passport=" + passport +
-                ", \n   person=" + person +
-                ", \n   worker=" + worker +
-                ", \n   id=" + id +
-                ", paid=" + paid +
-                '}';
+        return Color.RED + "\nRequest:" + Color.RESET +
+           Color.BLUE + " Passport =" + Color.RESET +  " [" + passport + "]" +
+                Color.BLUE + ", \n         Person =" + Color.RESET +  " [" + person + "]" +
+                Color.BLUE + ", \n         Worker =" + Color.RESET +  " [" + worker + "]" +
+                Color.BLUE + ", \n         Id = " + Color.RESET  + id +
+                Color.BLUE + ", Paid = " +Color.RESET + paid + "\n";
     }
 }

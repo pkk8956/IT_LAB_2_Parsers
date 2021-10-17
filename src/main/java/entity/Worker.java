@@ -36,9 +36,9 @@ public class Worker {
 
     @Override
     public String toString() {
-        return "Worker{" +
-                "id=" + id +
-                ", post='" + post + '\'' +
-                '}';
+        return
+                "Id = " + id +
+                ", Post = '" + post + '\'';
+
     }
 }

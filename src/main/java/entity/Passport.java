@@ -69,12 +69,11 @@ public class Passport {
 
     @Override
     public String toString() {
-        return "Passport{" +
-                "serialNumber='" + serialNumber + '\'' +
-                ", validity='" + validity + '\'' +
-                ", issuedBy='" + issuedBy + '\'' +
-                ", RNTRC='" + RNTRC + '\'' +
-                ", date='" + date + '\'' +
-                '}';
+        return
+                "SerialNumber = '" + serialNumber + '\'' +
+                ", Validity = '" + validity + '\'' +
+                ", IssuedBy = '" + issuedBy + '\'' +
+                ", Date = '" + date + '\'' ;
+
     }
 }

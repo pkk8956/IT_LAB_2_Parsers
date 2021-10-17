@@ -8,7 +8,7 @@ public class Person {
     private String identificationNumber;
     private String surname;
     private String firstName;
-    private String LastName;
+    private String lastName;
     private String address;
     private String gender;
     private String date;
@@ -20,7 +20,7 @@ public class Person {
         this.identificationNumber = identificationNumber;
         this.surname = surname;
         this.firstName = firstName;
-        LastName = lastName;
+        this.lastName = lastName;
         this.address = address;
         this.gender = gender;
         this.date = date;
@@ -55,11 +55,11 @@ public class Person {
 
     @XmlElement(name = "last_name")
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        LastName = lastName;
+        this.lastName = lastName;
     }
 
     @XmlElement(name = "address")
@@ -91,14 +91,11 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "identificationNumber='" + identificationNumber + '\'' +
-                ", surname='" + surname + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", LastName='" + LastName + '\'' +
-                ", address='" + address + '\'' +
-                ", gender='" + gender + '\'' +
-                ", date='" + date + '\'' +
-                '}';
+        return
+                        "Surname = '" + surname + '\'' +
+                        ", FirstName = '" + firstName + '\'' +
+                        ", LastName = '" + lastName + '\'' +
+                        ", BirthDate = '" + date + '\'' +
+                        ", IdentificationNumber = '" + identificationNumber + '\'' ;
     }
 }
