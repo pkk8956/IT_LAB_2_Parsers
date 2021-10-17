@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="9" paid="true">
+    <passport serial_number="28132168">
+        <date>2022-09-23</date>
+        <Issued_by>1582</Issued_by>
+        <RNTRC>8543957523</RNTRC>
+        <validity>2032-05-23</validity>
+    </passport>
+    <person identification_number="4313843153445">
+        <address>Балаклея</address>
+        <date>2000-08-11</date>
+        <first_name>Владислав</first_name>
+        <gender>М</gender>
+        <last_name>Олександрович</last_name>
+        <surname>Веснянка</surname>
+    </person>
+    <worker worker_id="6">
+        <post>Главный работник</post>
+    </worker>
+</request>
