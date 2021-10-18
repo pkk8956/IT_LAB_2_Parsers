@@ -13,19 +13,22 @@ import java.io.IOException;
 
 public class Validator {
 
-    public boolean validation() throws SAXException {
+    public boolean validation(String path) throws SAXException {
 
         SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 
         Schema schema = sf.newSchema(new File(Properties.XSD_PATH));
         javax.xml.validation.Validator validator = schema.newValidator();
-        Source source = new StreamSource(Properties.XML_PATH);
+        Source source = new StreamSource(path);
 
         try {
             validator.validate(source);
+
+            System.out.println(path + " is valid.");
+
             return true;
         } catch (SAXException | IOException ex) {
-            System.out.println(Properties.XML_PATH + " is not valid because ");
+            System.out.println(path + " is not valid because ");
             System.out.println(ex.getMessage());
             return false;
         }

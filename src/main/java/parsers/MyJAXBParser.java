@@ -11,14 +11,12 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-public class JAXBParser {
+public class MyJAXBParser {
 
-    public Request unmarshallingUsingJAXB() throws SAXException {
+    private Request unmarshallingUsingJAXB() throws SAXException {
         System.out.println(Color.GREEN + "Unmarshalling..." + Color.RESET);
 
-        if (new Validator().validation()){
-            System.out.println(Properties.XML_PATH + " is valid.");
-
+        if (new Validator().validation(Properties.XML_PATH)){
             Request request = null;
             try {
                 File file = new File(Properties.XML_PATH);
@@ -36,24 +34,22 @@ public class JAXBParser {
         return null;
     }
 
-    public void marshallingUsingJAXB(Request request) throws SAXException {
+    private void marshallingUsingJAXB(Request request) throws SAXException {
+
         System.out.println(Color.GREEN + "Marshalling..." + Color.RESET);
 
-        if(new Validator().validation()){
-            System.out.println(Properties.XML_PATH + " is valid.");
+        try
+        {
+            JAXBContext jaxbContext = JAXBContext.newInstance(Request.class);
+            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
-            try
-            {
-                JAXBContext jaxbContext = JAXBContext.newInstance(Request.class);
-                Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-                jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-
-                jaxbMarshaller.marshal(request, new File(Properties.JAXB_XML_PATH));
-                System.out.println(Properties.JAXB_XML_PATH + " is created");
-            } catch (JAXBException e) {
-                e.printStackTrace();
-            }
+            jaxbMarshaller.marshal(request, new File(Properties.JAXB_XML_PATH));
+            System.out.println(Properties.JAXB_XML_PATH + " is created");
+        } catch (JAXBException e) {
+            e.printStackTrace();
         }
+        new Validator().validation(Properties.JAXB_XML_PATH);
     }
 
     public void main(Request request) throws SAXException {

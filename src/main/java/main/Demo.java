@@ -5,9 +5,7 @@ import entity.Person;
 import entity.Request;
 import entity.Worker;
 import org.xml.sax.SAXException;
-import parsers.DOMParser;
-import parsers.JAXBParser;
-import parsers.Validator;
+import parsers.*;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
@@ -26,17 +24,16 @@ public class Demo {
         Request request1 = new Request(passport1, person1, worker, 9, true);
         Request request2 = new Request(passport2, person2, worker, 10, true);
 
+        new MyJAXBParser().main(request1);
+        new MyDOMParser().main(request2);
+        new MySAXParser().main();
 
-
-        new JAXBParser().main(request1);
-        new DOMParser().main(request2);
-
-//        if (new Validator().validation()){
-//            if(XSLTransform.main(new String[] {Properties.XSL_PATH, Properties.XML_PATH, Properties.HTML_PATH})){
-//                System.out.println("src/xml/Request.html is created");
-//            }
-//        }
-//        else System.out.println("html-file is not created");
+        if (new Validator().validation(Properties.XML_PATH)){
+            if(XSLTransform.main()){
+                System.out.println("src/xml/Request.html is created");
+            }
+        }
+        else System.out.println("html-file is not created");
 
 
     }

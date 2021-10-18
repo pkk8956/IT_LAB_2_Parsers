@@ -2,10 +2,10 @@
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
                 <xs:element name="request">
                     <xs:complexType>
-                        <xs:sequence>
+                        <xs:all>
                             <xs:element name="passport">
                                 <xs:complexType>
-                                    <xs:sequence>
+                                    <xs:all>
                                         <!--VALIDITY (Годный до, дата)-->
                                         <xs:element name="validity">
                                             <xs:simpleType>
@@ -38,7 +38,7 @@
                                                 </xs:restriction>
                                             </xs:simpleType>
                                         </xs:element>
-                                    </xs:sequence>
+                                    </xs:all>
                                     <!--PASSPORT NUMBER (Номер паспорта)-->
                                     <xs:attribute type="xs:string" name="serial_number" use="required"/>
                                 </xs:complexType>
@@ -147,7 +147,7 @@
                                     <xs:attribute type="xs:int" name="worker_id" default="0"/>
                                 </xs:complexType>
                             </xs:element>
-                        </xs:sequence>
+                        </xs:all>
                         <!--ID (Номер заявки)-->
                         <xs:attribute type="xs:int" name="id" default="0" />
                         <!--PAID (Статус: оплачено \ не оплачено)-->

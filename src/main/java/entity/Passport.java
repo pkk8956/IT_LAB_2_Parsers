@@ -40,7 +40,7 @@ public class Passport {
         this.validity = validity;
     }
 
-    @XmlElement(name = "Issued_by")
+    @XmlElement(name = "issued_by")
     public String getIssuedBy() {
         return issuedBy;
     }
@@ -58,7 +58,7 @@ public class Passport {
         this.RNTRC = RNTRC;
     }
 
-    @XmlElement(name = "date")
+    @XmlElement(name = "data")
     public String getDate() {
         return date;
     }

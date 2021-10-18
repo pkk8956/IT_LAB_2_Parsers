@@ -62,7 +62,7 @@ public class Person {
         return lastName;
     }
 
-    @XmlAttribute(name = "nationality")
+    @XmlElement(name = "nationality")
     public String getNationality() {
         return nationality;
     }
@@ -109,7 +109,6 @@ public class Person {
                         ", FirstName = '" + firstName + '\'' +
                         ", LastName = '" + lastName + '\'' +
                         ", BirthDate = '" + date + '\'' +
-                                ", Nationality = '" + nationality + '\''+
-                        ", IdentificationNumber = '" + identificationNumber + '\'' ;
+                                ", Nationality = '" + nationality + '\'';
     }
 }
