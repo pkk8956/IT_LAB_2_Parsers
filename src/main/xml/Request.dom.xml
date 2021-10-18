@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<request id="10" paid="true">
+    <passport serial_number="73464601">
+        <validity>2032-05-23</validity>
+        <issued_by>8924</issued_by>
+        <RNTRC>7947613467</RNTRC>
+        <data>2022-09-23</data>
+    </passport>
+    <person identification_number="5513813125135">
+        <surname>Тарасенко</surname>
+        <first_name>Денис</first_name>
+        <last_name>Петрович</last_name>
+        <nationality>UA</nationality>
+        <address>Краснокутск</address>
+        <gender>М</gender>
+        <date>2000-05-18</date>
+    </person>
+    <worker worker_id="6">
+        <post>Главный работник</post>
+    </worker>
+</request>

@@ -11,11 +11,12 @@ public class Person {
     private String lastName;
     private String address;
     private String gender;
+    private String nationality;
     private String date;
 
     public Person(){}
 
-    public Person(String identificationNumber, String surname, String firstName, String lastName, String address, String gender, String date) {
+    public Person(String identificationNumber, String surname, String firstName, String lastName, String address, String gender, String nationality, String date) {
         super();
         this.identificationNumber = identificationNumber;
         this.surname = surname;
@@ -23,8 +24,11 @@ public class Person {
         this.lastName = lastName;
         this.address = address;
         this.gender = gender;
+        this.nationality = nationality;
         this.date = date;
     }
+
+
 
     @XmlAttribute(name = "identification_number")
     public String getIdentificationNumber() {
@@ -56,6 +60,15 @@ public class Person {
     @XmlElement(name = "last_name")
     public String getLastName() {
         return lastName;
+    }
+
+    @XmlAttribute(name = "nationality")
+    public String getNationality() {
+        return nationality;
+    }
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
     }
 
     public void setLastName(String lastName) {
@@ -96,6 +109,7 @@ public class Person {
                         ", FirstName = '" + firstName + '\'' +
                         ", LastName = '" + lastName + '\'' +
                         ", BirthDate = '" + date + '\'' +
+                                ", Nationality = '" + nationality + '\''+
                         ", IdentificationNumber = '" + identificationNumber + '\'' ;
     }
 }
