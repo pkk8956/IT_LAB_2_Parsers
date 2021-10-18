@@ -74,7 +74,7 @@ public class MyDOMParser {
         return request;
     }
 
-    private void marshallingUsingDOM(Request request) throws SAXException, ParserConfigurationException {
+    private void marshallingUsingDOM(Request request) throws SAXException{
         System.out.println(Color.GREEN + "Marshalling..." + Color.RESET);
 
         try{

@@ -109,7 +109,7 @@ public class SAXHandlers extends DefaultHandler {
     }
 
     @Override
-    public void characters(char ch[], int start, int length) {
+    public void characters(char[] ch, int start, int length) {
         currentValue.append(ch, start, length);
     }
 }
