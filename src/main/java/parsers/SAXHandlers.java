@@ -73,7 +73,6 @@ public class SAXHandlers extends DefaultHandler {
             currentPassport.setDate(currentValue.toString());
         }
 
-
         if (qName.equalsIgnoreCase("surname")) {
             currentPerson.setSurname(currentValue.toString());
         }
@@ -101,7 +100,6 @@ public class SAXHandlers extends DefaultHandler {
         if (qName.equalsIgnoreCase("date")) {
             currentPerson.setDate(currentValue.toString());
         }
-
 
         if (qName.equalsIgnoreCase("post")) {
             currentWorker.setPost(currentValue.toString());
